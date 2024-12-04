@@ -25,12 +25,11 @@ class Vacancy:
         }
         self.__list_vacancies.append(dict_vacancy)
 
-
     @staticmethod
     def __validate(salary):
         """ Метод валидации зарплаты """
         if salary is None:
-            return {"from": 0, "to": 0 }
+            return {"from" : 0, "to" : 0}
         if isinstance(salary, str):
             # Попытка распарсить строку зарплаты, например, "100000 - 150000"
             try:
@@ -47,7 +46,6 @@ class Vacancy:
         else:
             # Если тип данных неожиданный, возвращаем значения по умолчанию
             return {"from": 0, "to": 0}
-
 
     def __ge__(self, other):
         """ Метода сравнения вакансий по зарплате """
@@ -69,16 +67,16 @@ class Vacancy:
 
             # Создаем экземпляр вакансий
             cls(
-                name = vacancy_data.get("name", "Не указан"),
-                url = vacancy_data.get("url", "Не указан"),
-                salary = salary,
-                snippet = snippet,
+                name=vacancy_data.get("name", "Не указан"),
+                url=vacancy_data.get("url", "Не указан"),
+                salary=salary,
+                snippet=snippet,
             )
         return cls.__list_vacancies
 
     @classmethod
     def filter_salary(cls, from_salary: int = 0, to_salary: int = float("inf")):
-        """ Метод фильтрации вакансий по зарплате (от\до) """
+        """ Метод фильтрации вакансий по зарплате (от/до) """
         for vacancies in cls.__list_vacancies:
             if vacancies["salary"].get("from", 0) >= from_salary and vacancies["salary"]["to"] <= to_salary:
                 print(vacancies)
@@ -107,6 +105,7 @@ class Vacancy:
     @property
     def snippet(self):
         return self.__snippet
+
 
 if __name__ == "__main__":
     Vacancy.clear_list()

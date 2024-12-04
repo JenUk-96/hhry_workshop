@@ -1,5 +1,6 @@
 from src.user_interaction import filter_vacancies, get_vacancies_by_salary
 
+
 def test_filter_vacancies_no_matches():
     vacancies_list = [
         {"name": "Vacancy A",
@@ -12,6 +13,7 @@ def test_filter_vacancies_no_matches():
     filter_words = ["Ruby"]
     result = filter_vacancies(vacancies_list, filter_words)
     assert result == []
+
 
 def test_get_vacancies_by_salary():
     filtered_vacancies = [

@@ -67,4 +67,4 @@ if __name__ == "__main__":
 
     json_saver = JSONSaver("../data/filtered_vacancies.json")
     json_saver.add_vacancy(vacancys)
-    # json_saver.delete_vacancy(vacancys)
+    # json_saver.delete_vacancy

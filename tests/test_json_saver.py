@@ -1,7 +1,10 @@
-from src.json_saver import JSONSaver
 import os
+
+from src.json_saver import JSONSaver
+
 base_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(base_dir, "../data/test_add_vacancy.json")
+
 
 def test_add_vacancy_json_saver(test_add_vacancy):
     test_vacancy = test_add_vacancy
@@ -26,7 +29,6 @@ def test_add_vacancy_json_saver(test_add_vacancy):
 
     with open(file_path, encoding="utf-8") as file:
         assert test_read_file == file.read()
-
 
 
 def test_delete_vacancy_json_saver(test_add_vacancy):
